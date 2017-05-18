@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>Document</title>
+	<link rel="manifest" href="manifest.json">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/app4.js"></script>
+    <script src="cordova.js"></script>
+</head>
+<body ng-app="todo" ng-controller="TodoCtrl">
+
+    <div class="bar bar-header">
+        <div class="h1 title">选项卡</div>
+    </div>
+    <!--选项卡-->
+    <div class="tabs tabs-calm">
+        <a href="#" class="tab-item">主页</a>
+        <a href="#" class="tab-item">收藏</a>
+        <a href="#" class="tab-item">设置</a>
+    </div>
+    <!--图标选项卡-->
+    <div class="tabs tabs-icon-only">
+        <a class="tab-item">
+            <i class="icon ion-home"></i>
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-star"></i>
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-gear-a"></i>
+        </a>
+    </div>
+    <!--顶部图标 + 文字选项卡-->
+    <div class="tabs tabs-icon-top">
+        <a href="#" class="tab-item">
+            <i class="icon ion-home"></i>
+            主页
+        </a>
+        <a href="#" class="tab-item">
+            <i class="icon ion-star"></i>
+            收藏
+        </a>
+        <a href="#" class="tab-item">
+            <i class="icon ion-gear-a"></i>
+            设置
+        </a>
+    </div>
+    <!--左侧图标 + 文字选项卡-->
+    <div class="tabs-striped tabs-top"><!--实现android风格-->
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item" href="#" ng-class="{'active':nums == 1}" ng-click="aFn(1)">
+                <i class="icon ion-home"></i>
+                主页
+            </a>
+            <a class="tab-item" href="#" ng-class="{'active':nums == 2}" ng-click="aFn(2)">
+                <i class="icon ion-star"></i>
+                收藏
+            </a>
+            <a class="tab-item" href="#" ng-class="{'active':nums == 3}" ng-click="aFn(3)">
+                <i class="icon ion-gear-a"></i>
+                设置
+            </a>
+        </div>
+    </div>
+    
+
+</body>
+<!--页面知识总结:ionic tab 选项卡-->
+<!--
+   
+   选项卡 容器采用 class = tabs
+   选项卡的每个选项 class = tab-item
+   可以使用不同的class 定义选项卡不同的颜色  要是隐藏选项卡 tabs-item-hide
+   使用 class = tabs-icon-only 可以设置只显示图标的选项卡
+   使用 class = tabs-icon-top 可以同时设置 顶部图标 和 文字选项卡
+   使用 class = tabs-icon-left 可以同时设置 左侧图标 和 文字选项卡
+   
+   class = tabs-striped 实现android风格的tabs
+   class = tabs-top 实现选项卡页面顶部
+ 
+   
+   
+   
+   
+   
+   
+-->
+</html>
+

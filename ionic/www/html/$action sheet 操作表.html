@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>Document</title>
+	<link rel="manifest" href="manifest.json">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+</head>
+<body ng-app="starter" ng-controller="actionsheetCtrl">
+    
+    <ion-pane>
+        <ion-content>
+            <h2 ng-click="show()">Action Sheet</h2>
+        </ion-content>
+    </ion-pane>
+
+    <script>
+        
+        angular.module('starter',['ionic'])
+//            .run(function($ionicPlatform){
+//                $ionicPlatform.ready(function(){
+//                    if( window.cordova && window.cordova.plugins.Keyboard ){
+//                        cordova.plugins.Keyboard.hideKeybordAccessoryBar(true);
+//                    }
+//                    if( window.StatusBar ){
+//                        StatusBar.styleDefault();
+//                    }
+//                })
+//            })
+            .controller('actionsheetCtrl',['$scope','$ionicActionSheet','$timeout',function($scope,$ionicActionSheet,$timeout){
+                $scope.show = function(){
+                    var hideSheet = $ionicActionSheet.show({
+                        buttons:[
+                            {text:'<b>Share</b>This'},
+                            {text:'Move'}
+                        ],
+                        destructiveText:'Delete',
+                        titleText:'Modify your album',
+                        cancelText:'Cancel',
+                        buttonClicked:function(index){
+                            console.log(index)
+                            //index 是buttons里边的下标
+                            if( index == 0 ){
+                                alert('这是第一个按钮');
+                            }else{
+                                alert('最后一个按钮')
+                            }
+                            return true;
+                        }
+                    });
+                    
+//                    $timeout(function(){
+//                        hideSheet();
+//                    },2000)
+                }
+            }])
+        
+    </script>
+
+    
+
+</body>
+<!--页面知识总结:操作表-->
+<!--
+   依靠 $ionicActionSheet 服务
+   
+   
+  
+-->
+</html>
+

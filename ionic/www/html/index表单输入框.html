@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>Document</title>
+	<link rel="manifest" href="manifest.json">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/app4.js"></script>
+    <script src="cordova.js"></script>
+</head>
+<body ng-app="todo" ng-controller="TodoCtrl">
+	
+    <!--<div class="bar bar-header">-->
+        <!--<div class="h1 title">卡片</div>-->
+    <!--</div>-->
+    <!--<div class="content has-header">-->
+        <!--<div class="card">-->
+            <!--<div class="item item-text-wrap">基本开案信息</div>-->
+        <!--</div>-->
+
+        <!---->
+    <!--</div>-->
+    
+    <div class="list">
+        <label class="item item-input">
+            <input type="text" placeholder="First Name"/>
+        </label>
+        <label class="item item-input">
+            <textarea placeholder="comments"></textarea>
+        </label>
+        
+    </div>
+    <div class="list">
+        <label class="item item-input">
+            <span>用户名：</span>
+            <input type="text"/>
+        </label>
+    </div>
+
+    <div class="list">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">First Name</span>
+            <input type="text" placeholder="Johm"/>
+        </label>
+    </div>
+
+    <div class="list">
+        <label class="item item-input item-floating-label">
+            <span class="input-label">用户名：</span>
+            <input type="text" placeholder="用户名"/>
+        </label>
+    </div>
+
+    <div class="list list-inset">
+        <label class="item item-input">
+            <input type="text" placeholder="First Name"/>
+        </label>
+    </div>
+
+    <div class="list">
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">//class = item-input-inset 内嵌输入域
+                <input type="text" placeholder="Email"/>
+            </label>
+            <button class="button button-small">Submit</button>
+        </div>
+    </div>
+
+    <div class="list list-inset">
+        <label class="item item-input"><!--带图标的输入框-->
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search"/>
+        </label>
+    </div>
+
+    <div class="bar bar-header item-input-inset">//头部输入框
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="搜索"/>
+        </label>
+        <button class="button button-clear">取消</button>
+    </div>
+
+    
+
+	
+</body>
+<!--页面知识总结:卡片-->
+<!--
+   class = card 卡片
+   
+   class = item-input  列表里的输入框
+   
+   class = input-label <span class="input-label">用户名</span>
+   
+   class = item-stacked-label 堆叠标签
+   
+   class = item-floating-label 浮动标签 没有实际意义
+   
+   class = list-inset 内嵌表单
+   
+   class = item-input-inset 内嵌输入域
+   
+   class = item-input 带图标的输入框
+   
+ 
+   
+   
+   
+   
+   
+   
+-->
+</html>
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>Document</title>
+	<link rel="manifest" href="manifest.json">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .col {
+            background-color: #F9FAFB;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            text-align: center;
+        }
+    </style>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/app4.js"></script>
+    <script src="cordova.js"></script>
+</head>
+<body ng-app="todo" ng-controller="TodoCtrl">
+    <div class="bar bar-header">
+        <div class="h1 title">同等大小网格</div>
+    </div>
+    <div class="content" style="margin-top: 44px;">
+        <div class="row">
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+            <div class="col">
+                <div class="col-demo">.col</div>
+            </div>
+        </div>
+        
+        <!--指定列宽-->
+        <div class="row">
+            <div class="col col-50">.col.col-50</div>
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+        </div>
+        
+        <!--有偏移量的网格-->
+        <div class="row">
+            <div class="col col-33 col-offset-33">.col</div>
+            <div class="col">.col</div>
+        </div>
+        
+        <!--纵向对齐网格-->
+        <div class="row">
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">1<br>2<br>3<br>3<br></div>
+        </div>
+        <div class="row">
+            <div class="col col-top">.col</div>
+            <div class="col col-center">.col</div>
+            <div class="col col-bottom">.col</div>
+            <div class="col col-top">1<br>2<br>3<br>4</div>
+        </div>
+        <div class="row row-top">
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">1<br>2<br>3<br>4</div>
+        </div>
+        <div class="row row-center">
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">1<br>2<br>3<br>4</div>
+        </div>
+        <div class="row row-bottom">
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">1<br>2<br>3<br>4</div>
+        </div>
+        
+        <!--响应式网格-->
+        
+    </div>
+    
+
+</body>
+<!--页面知识总结:ionic 网格  和原生的table差不多-->
+<!--
+   class = row  是  行
+   class = col  是  列  采用弹性盒模型布局
+   class = col-50 指定列宽
+   每一个col样式会自动添加上边框和灰色背景
+   class = col-off-33 设置偏移量
+   
+   //纵向对齐网格
+   class = col-top/col-center/col-bottom  可以添加在row上  也可以添加在col上 效果不一样
+   
+   
+   
+ 
+   
+   
+   
+   
+   
+   
+-->
+</html>
+

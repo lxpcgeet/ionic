@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>Document</title>
+	<link rel="manifest" href="manifest.json">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+</head>
+<body ng-app="starter" ng-controller="actionsheetCtrl">
+    
+    <ion-pane>
+        <ion-content>
+            <h2 ng-click="action()">$ionicBackdrop</h2>
+        </ion-content>
+    </ion-pane>
+    
+    <script>
+        
+        angular.module('starter',['ionic'])
+
+            .controller('actionsheetCtrl',['$scope','$timeout','$ionicBackdrop',function($scope,$timeout,$ionicBackdrop){
+
+                $scope.action = function(){
+                    $ionicBackdrop.retain();
+                    $timeout(function(){
+                          $ionicBackdrop.release();
+                    },1000)
+                }
+                
+            }])
+        
+    </script>
+
+    
+
+</body>
+<!--背景层 显示隐藏-->
+<!--
+  $ionicBackdrop.retain()   背景层显示
+  $ionicBackdrop.release()  背景层隐藏
+  
+  $ionicBackdrop 背景层调用的服务
+   
+  
+-->
+</html>
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>Document</title>
+	<link rel="manifest" href="manifest.json">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/app2.js"></script>
+    <script src="cordova.js"></script>
+</head>
+<body ng-app="todo" ng-controller="TodoCtrl">
+	<ion-side-menus><!-- 是一个带有边栏菜单的容器，可以通过点击按钮或者滑动屏幕来展开菜单。-->
+		<!--中心内容-->
+		<ion-side-menu-content><!--展示主要内容的容器，可以通过滑动屏幕来展开menu-->
+			<ion-header-bar class="bar-dark">
+				<button class="button button-icon" ng-click="toggleProjects()"><!--标题栏上的左侧图标-->
+					<i class="icon ion-navicon"></i>
+				</button>
+				<h1 class="title">{{activeProject.title}}</h1>
+				<!--新增按钮-->
+				<button class="button button-icon" ng-click="newTask()"><!--标题栏上的右侧图标-->
+					<i class='icon ion-compose'></i>
+        </button>
+			</ion-header-bar>
+
+			<ion-content>
+				<!--列表-->
+				<ion-list>
+					<ion-item ng-repeat="task in activeProject.tasks">
+						{{task.title}}
+					</ion-item>
+				</ion-list>
+			</ion-content>
+		</ion-side-menu-content>
+		<!--左边栏-->
+		<ion-side-menu side="left"><!--存放在侧栏的容器  左侧列表-->
+			<ion-header-bar class="bar-dark">
+				<h1 class="title">projects</h1><!--左侧列表头部-->
+				<button class="button button-icon ion-plus" ng-click="newProject()"></button><!--左侧列表右侧图标-->
+			</ion-header-bar>
+			<ion-content scroll="false"><!--scroll="false" 大体是滚动条的意思-->
+				<ion-list><!--列表-->
+					<ion-item ng-repeat="project in projects" ng-click="selectProject(project,$index)" ng-class="{active:activeProject == project}">{{project.title}}</ion-item>
+				</ion-list>
+			</ion-content>
+		</ion-side-menu>
+	</ion-side-menus>
+
+
+
+	<!--创建添加页面-->
+	<script id='new-task.html' type="text/ng-template">
+		<div class="modal">
+			<ion-header-bar class="bar-secondary">
+				<h1 class="title">New Task</h1>
+				<button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
+			</ion-header-bar>
+
+			<ion-content>
+				<form ng-submit="createTask(task)">
+					<div class="list">
+						<label class="item item-input">
+							<input type="text" placeholder="what do you need to do?" ng-model="task.title">
+						</label>
+					</div>
+					<div class="padding">
+						<button type="submit" class="button button-block button-positive">Create Task</button>
+					</div>
+				</form>
+			</ion-content>
+		</div>
+	</script>
+</body>
+</html>
+
